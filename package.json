@@ -15,10 +15,14 @@
   "author": "raulanatol",
   "main": "lib/main.js",
   "scripts": {
-    "test": "jest",
-    "lint": "eslint --max-warnings 0 . --ext .ts",
     "clean": "shx rm -rf dist lib",
-    "package": "ncc build --source-map --license licenses.txt"
+    "lint": "eslint --max-warnings 0 . --ext .ts",
+    "package": "ncc build --source-map --license licenses.txt",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
   },
   "dependencies": {
     "@actions/core": "^1.2.6",
@@ -32,6 +36,7 @@
     "eslint": "^7.11.0",
     "jest": "^26.5.3",
     "shx": "^0.3.2",
+    "ts-jest": "^26.4.1",
     "typescript": "^4.0.3"
   }
 }
